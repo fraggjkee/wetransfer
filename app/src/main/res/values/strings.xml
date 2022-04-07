@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WeTransfer</string>
+    <string name="book">Book!</string>
+    <string name="booked">Booked!</string>
+    <plurals name="remaining_spots">
+        <item quantity="one">%1$d spot remaining</item>
+        <item quantity="other">%1$d spots remaining</item>
+    </plurals>
+</resources>
