@@ -14,6 +14,9 @@ class RoomsRepositoryImpl @Inject constructor(
 ) : RoomsRepository {
 
     override suspend fun getRooms(): List<Room> {
+        // TODO This is a simplified implementation. It may be a good idea to introduce some rules
+        //  for local cache eviction, we should also support something like "Force Refresh" to use
+        //  with Pull-to-Refresh component in UI, etc.
         val localData = localDataSource.getRooms()
         return localData.ifEmpty {
             val remoteData = remoteDataSource.getRooms()
