@@ -1,5 +1,6 @@
 package com.fraggjkee.wetransfer.data.impl
 
+import androidx.annotation.VisibleForTesting
 import com.fraggjkee.wetransfer.data.RoomsRemoteDataSource
 import com.fraggjkee.wetransfer.data.network.ApiService
 import com.fraggjkee.wetransfer.data.network.GetRoomsResponse
@@ -17,7 +18,8 @@ class RoomsRemoteDataSourceImpl @Inject constructor(
     }
 }
 
-private fun GetRoomsResponse.RoomDto.toDomain(): Room {
+@VisibleForTesting
+fun GetRoomsResponse.RoomDto.toDomain(): Room {
     return Room(
         name = this.name,
         spotsCount = this.spots,
